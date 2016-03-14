@@ -1,0 +1,5 @@
+<ul class="blog-post-list">
+    <li class="blog-post-link" ng-repeat="film in filmlist.film">
+        <a ng-href="/film-detail/{{ film._id }}">{{ film.title }} </a> <span class="fa fa-trash navbar-right" />
+    </li>
+</ul>

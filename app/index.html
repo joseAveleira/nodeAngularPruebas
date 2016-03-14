@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Coloca favicon.ico y apple-touch-icon(s) en el directorio raíz -->
+    <!-- build:css css/style.min.css -->
+     <!-- bower:css -->
+     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+     <link rel="stylesheet" href="lib/components-font-awesome/css/font-awesome.css" />
+     <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body ng-app="blog">
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-sm-3">
+                <a ng-href="/new"><span class="fa fa-music"></span> Crear Entradas </a>
+                 <a ng-href="/film"><span class="fa fa-film"></span> Listado Pelis </a>
+            </aside>
+            <section class="col-sm-9" ng-view></section>
+        </div>
+    </div>
+
+
+    <!--[if lt IE 8]>
+<p class="browsehappy">
+Estás usando un navegador <strong>desactualizado</s
+trong>.
+Por favor <a href="http://browsehappy.com/">actuali
+za tu navegador</a>
+Para mejorar la experiencia..
+</p>
+<![endif]-->
+    <!-- build:js js/vendor.min.js -->
+    <!-- bower:js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js js/app.min.js -->
+    <!-- inject:js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers.js"></script>
+    <script src="/scripts/services.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+
+</html>

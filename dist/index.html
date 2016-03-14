@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, init
+ial-scale=1">
+    <!-- Coloca favicon.ico y apple-touch-icon(s) en el directorio raíz -->
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body ng-app="blog">
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-sm-3">
+                <a ng-href="/new"><span class="fa fa-music"></span> Crear Entradas </a>
+            </aside>
+            <section class="col-sm-9" ng-view></section>
+        </div>
+    </div>
+
+
+    <!--[if lt IE 8]>
+<p class="browsehappy">
+Estás usando un navegador <strong>desactualizado</s
+trong>.
+Por favor <a href="http://browsehappy.com/">actuali
+za tu navegador</a>
+Para mejorar la experiencia..
+</p>
+<![endif]-->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
