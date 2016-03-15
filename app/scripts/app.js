@@ -5,7 +5,7 @@
     angular.module('blog', ['ngRoute', 'blog.controllers']);
 
     function config($locationProvider, $routeProvider) {
-        $locationProvider.html5Mode(true);
+
         $routeProvider
             .when('/', {
                 templateUrl: 'views/post-list.tpl.html',
@@ -31,6 +31,12 @@
                 templateUrl: 'views/film-detail.tpl.html',
                 controller: 'FilmDetailController',
                 controllerAs: 'filmdetail'
+
+            })
+            .when ('/film-delete/:filmId',{
+                templateUrl: 'views/film-list.tpl.html',
+                controller: 'FilmDeleteController',
+                controllerAs: 'filmlist'
 
             });
     }

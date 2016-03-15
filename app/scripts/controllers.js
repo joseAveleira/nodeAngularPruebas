@@ -10,15 +10,48 @@
     function FilmDetailController($routeParams, Film) {
 
         this.film = Film.get({
-            id: $routeParams.filmId,
-            otro: 'otro'
+            id: $routeParams.filmId
         });
+
 
     }
 
-    function FilmListController(Film) {
+    function FilmDeleteController($routeParams, Film) {
+
+        this.film = Film.remove({
+            id: $routeParams.filmId
+        });
+        /*
+                this.film = {};
+                var self = this;
+                Film.delete({
+                        id: $routeParams.filmId
+                    })
+                    .$promise.then(
+                        function (data) {
+                            self.film = data;
+                        }
+                    );
+        */
+
+
+
+    }
+
+    function FilmListController(Film, $scope) {
+
+
 
         this.film = Film.query();
+        $scope.eliminar = function (id) {
+            this.film = Film.remove({
+                id: id
+
+            });
+
+           // console.log($scope.filmlist);
+        };
+
     }
 
     function PostCreateController(Post) {
@@ -69,6 +102,7 @@
         .controller('FilmListController', FilmListController)
         .controller('PostDetailController', PostDetailController)
         .controller('FilmCreateController', FilmCreateController)
+        .controller('FilmDeleteController', FilmDeleteController)
         .controller('FilmDetailController', FilmDetailController);
 
 })();
