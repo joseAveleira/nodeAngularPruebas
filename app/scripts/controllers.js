@@ -66,7 +66,7 @@
         var self = this;
         this.create = function () {
          // $scope.filmlist.film.push(Film.save(self.film));
-            // console.log(Film.save(self.film));
+             console.log(Film.save(self.film));
             $location.path('/film');
         };
     }
