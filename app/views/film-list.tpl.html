@@ -1,5 +1,5 @@
 <ul class="blog-post-list well">
     <li class="blog-post-link " ng-repeat="film in filmlist.film">
-        <a ng-href="/#film-detail/{{ film._id }}">{{ film.title }} </a><a ng-click="eliminar(film._id)" > <span class="fa fa-print " /></a><a ng-href="/#film-delete/{{ film._id }}"> <span class="fa fa-trash navbar-right" /></a>
+        <a ng-href="/#film-detail/{{ film._id }}">{{ film.title }} </a><a ng-click="eliminar(film._id,$index)" > <span class="fa fa-print " /></a><a ng-href="/#film-delete/{{ film._id }}"> <span class="fa fa-trash navbar-right" /></a>
     </li>
 </ul>

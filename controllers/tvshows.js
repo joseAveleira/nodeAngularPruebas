@@ -12,7 +12,7 @@ exports.findAllTVShows = function (req, res) {
             return res.status(500).send(err.message);
         }
 
-        console.log('GET /tvshows '+ require('util').inspect( req.params ));
+        console.log('listar /tvshows '+ require('util').inspect( req.params ));
         res.status(200).jsonp(tvshows);
     });
 };
@@ -24,7 +24,7 @@ exports.findById = function (req, res) {
             return res.status(500).send(err.message);
         }
 
-        console.log('GET /tvshows/' + req.params.id+require('util').inspect( req.params ));
+        console.log('buscar /tvshows/' + req.params.id+require('util').inspect( req.params ));
         res.status(200).jsonp(tvshow);
     });
 };
@@ -81,6 +81,7 @@ exports.deleteTVShow = function (req, res) {
             if (err) {
                 return res.status(500).send(err.message);
             }
+            console.log('Eliminar /tvshows/'+req.params.id);
             res.status(200).send();
         });
     });

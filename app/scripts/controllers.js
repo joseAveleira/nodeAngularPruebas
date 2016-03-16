@@ -43,13 +43,13 @@
 
 
         this.film = Film.query();
-        $scope.eliminar = function (id) {
+        $scope.eliminar = function (id,indice) {
             this.film = Film.remove({
                 id: id
 
             });
-
-           // console.log($scope.filmlist);
+            $scope.filmlist.film.splice(indice,1);
+            console.log(' idice:'+indice);
         };
 
     }
@@ -62,10 +62,12 @@
     }
 
 
-    function FilmCreateController(Film) {
+    function FilmCreateController(Film,$location) {
         var self = this;
         this.create = function () {
-            Film.save(self.film);
+         // $scope.filmlist.film.push(Film.save(self.film));
+            // console.log(Film.save(self.film));
+            $location.path('/film');
         };
     }
 
