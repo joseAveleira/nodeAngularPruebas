@@ -1,17 +1,17 @@
-@import 'fonts'
 
 // colores
 b_silver = #ddd
 
 body
-  font-family 'Raleway-Light'
+
   font-size 16px
+  margin-top 80px
+  background-color #eaeaea;
 
 .blog-post-list
   list-style-type none
 
   .blog-post-link
-    font-family 'Raleway'
     margin .5em 0 1em 0
     padding 0 0 .25em 0
     border-bottom 1px solid b_silver
@@ -40,3 +40,77 @@ body
 
       .comment-body
         font-style italic
+
+/* Red */
+$bgDefault = #84bae6
+$bgHighlight = #002056
+$colDefault = #002056
+$colHover = #ffffff
+                           /* Green * /
+$bgDefault      : #2ecc71;
+$bgHighlight    : #27ae60;
+$colDefault     : #ecf0f1;
+$colHover       : #d1ffed; /*/
+                           /* Purple * /
+$bgDefault      : #9b59b6;
+$bgHighlight    : #8e44ad;
+$colDefault     : #ecf0f1;
+$colHover       : #ecdbff; /*/
+                           /* Orange * /
+$bgDefault      : #e67e22;
+$bgHighlight    : #d35400;
+$colDefault     : #ecf0f1;
+$colHover       : #ffe6d1; /*/
+/* --- Style --- */
+.navbar-default
+  background-color: $bgDefault
+  border-color: $bgHighlight
+  .navbar-brand
+    color: $colDefault
+    &:hover, &:focus
+      color: $colHover
+  .navbar-nav
+    > li
+      > a
+        color: $colDefault
+        &:hover, &:focus
+          color: $colHover
+    .active
+      > a, > a:hover, > a:focus
+        color: $colHover
+        background-color: $bgHighlight
+    .open
+      > a, > a:hover, > a:focus
+        color: $colHover
+        background-color: $bgHighlight
+        .caret
+          border-top-color: $colHover
+          border-bottom-color: $colHover
+    > .dropdown
+      > a
+        .caret
+          border-top-color: $colDefault
+          border-bottom-color: $colDefault
+        &:hover, &:focus
+          .caret
+            border-top-color: $colHover
+            border-bottom-color: $colHover
+  .navbar-toggle
+    border-color: $bgHighlight
+    &:hover, &:focus
+      background-color: $bgHighlight
+    .icon-bar
+      background-color: $colDefault
+@media (max-width: 767px)
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a
+    color: $colDefault
+    &:hover, &:focus
+      color: $colHover
+      background-color: $bgHighlight
+
+
+
+.panel
+    border-width 1px
+    border-color #dbdbdb
+    border-radius 0px;

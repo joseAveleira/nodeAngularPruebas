@@ -1,7 +1,11 @@
 (function () {
     'use strict';
     angular
-        .module('blog.controllers', ['blog.services']);
+        .module('generador.controllers', ['generador.services']);
+
+    function DiccionariosController () {
+
+    }
 
     function PostListController(Post) {
         this.posts = Post.query();
@@ -16,40 +20,30 @@
 
     }
 
-    function FilmDeleteController($routeParams, Film) {
 
-        this.film = Film.remove({
-            id: $routeParams.filmId
-        });
-        /*
-                this.film = {};
-                var self = this;
-                Film.delete({
-                        id: $routeParams.filmId
-                    })
-                    .$promise.then(
-                        function (data) {
-                            self.film = data;
-                        }
-                    );
-        */
-
-
-
+    function HeaderController($scope, $location) {
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
+        console.log($location.path());
     }
+
 
     function FilmListController(Film, $scope) {
 
 
-
         this.film = Film.query();
-        $scope.eliminar = function (id,indice) {
+        //$scope.filmlist.film.add(filmlist);
+        // this.film=filmlist.getlista();
+        $scope.eliminar = function (id, indice) {
+
             this.film = Film.remove({
                 id: id
-
             });
-            $scope.filmlist.film.splice(indice,1);
-            console.log(' idice:'+indice);
+
+            $scope.filmlist.film.splice(indice, 1);
+            console.log(' indice:' + indice);
+
         };
 
     }
@@ -62,12 +56,16 @@
     }
 
 
-    function FilmCreateController(Film,$location) {
+    function FilmCreateController(Film, $location) {
         var self = this;
+
+
         this.create = function () {
-         // $scope.filmlist.film.push(Film.save(self.film));
-             console.log(Film.save(self.film));
+            // filmlist.setlsita(self.film);
+            // console.log(filmlist.getlista());
+            Film.save(self.film);
             $location.path('/film');
+
         };
     }
 
@@ -98,13 +96,14 @@
     }
 
     angular
-        .module('blog.controllers')
+        .module('generador.controllers')
         .controller('PostListController', PostListController)
         .controller('PostCreateController', PostCreateController)
         .controller('FilmListController', FilmListController)
         .controller('PostDetailController', PostDetailController)
         .controller('FilmCreateController', FilmCreateController)
-        .controller('FilmDeleteController', FilmDeleteController)
+        .controller('HeaderController', HeaderController)
+        .controller('DiccionariosController', DiccionariosController)
         .controller('FilmDetailController', FilmDetailController);
 
 })();

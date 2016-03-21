@@ -2,7 +2,7 @@
     'use strict';
     // Aquí irá la funcionalidad
 
-    angular.module('blog', ['ngRoute', 'blog.controllers']);
+    angular.module('generador', ['ngRoute', 'generador.controllers']);
 
     function config($locationProvider, $routeProvider) {
 
@@ -15,7 +15,7 @@
             .when('/post/:postId', {
                 templateUrl: 'views/post-detail.tpl.html',
                 controller: 'PostDetailController',
-                controllerAs: 'postdetail'
+                controllerAs: 'filmlist'
             })
             .when('/new', {
                 templateUrl: 'views/film-create.tpl.html',
@@ -33,15 +33,15 @@
                 controllerAs: 'filmdetail'
 
             })
-            .when ('/film-delete/:filmId',{
-                templateUrl: 'views/film-list.tpl.html',
-                controller: 'FilmDeleteController',
-                controllerAs: 'filmlist'
+            .when ('/diccionarios',{
+                templateUrl: 'views/diccionarios.html',
+                controller: 'DiccionariosController',
+                controllerAs: 'diccionarios'
 
             });
     }
     angular
-        .module('blog')
+        .module('generador')
         .config(config);
 })();
 
